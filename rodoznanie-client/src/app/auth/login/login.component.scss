@@ -9,4 +9,30 @@
   margin: auto;
   border-radius: 10px;
   box-shadow: 0px 0px 9px 1px #919191;
+  gap: 12px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.email,
+.password {
+  display: flex;
+  flex-direction: column;
+}
+button {
+  border: none;
+  padding: 12px 19px;
+  background-color: #cdedca;
+  border-radius: 50px;
+  min-width: 300px;
+}
+input {
+  border: none;
+  background: #f3f0f0;
+  min-width: 300px;
+  max-width: 540px;
 }
