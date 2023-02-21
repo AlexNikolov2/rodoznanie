@@ -29,6 +29,7 @@ button {
   background-color: #cdedca;
   border-radius: 50px;
   min-width: 300px;
+  font-size: medium;
 }
 input {
   border: none;
@@ -44,4 +45,7 @@ input {
 }
 img {
   width: 40px;
+}
+.no-account {
+  text-align: center;
 }
