@@ -4,24 +4,28 @@
   justify-content: center;
   align-items: center;
   min-width: 310px;
-  max-width: 550px;
+  max-width: 450px;
   background-color: #f3f0f0;
   margin: auto;
-  border-radius: 10px;
-  box-shadow: 0px 0px 9px 1px #919191;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 0.1px #919191;
   gap: 12px;
+}
+h2 {
+  font-size: 40px;
 }
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
 }
 .email,
 .password {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 button {
   border: none;
@@ -35,7 +39,8 @@ input {
   border: none;
   background: #f3f0f0;
   min-width: 300px;
-  max-width: 540px;
+  max-width: 440px;
+  font-size: 19px;
 }
 .google {
   display: flex;
@@ -48,4 +53,17 @@ img {
 }
 .no-account {
   text-align: center;
+}
+fa-icon {
+  font-size: 30px;
+  color: #5cbb54;
+}
+.email-input,
+.pass-input {
+  display: flex;
+  gap: 5px;
+  border-bottom: 2px solid black;
+}
+.password {
+  margin-bottom: 40px;
 }
