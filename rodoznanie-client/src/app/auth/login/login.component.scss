@@ -4,10 +4,10 @@
   justify-content: center;
   align-items: center;
   min-width: 310px;
-  max-width: 500px;
+  max-width: 450px;
   background-color: #f3f0f0;
   margin: auto;
-  border-radius: 10px;
+  border-radius: 40px;
   box-shadow: 0px 0px 2px 0.1px #919191;
   gap: 12px;
 }
@@ -39,7 +39,7 @@ input {
   border: none;
   background: #f3f0f0;
   min-width: 300px;
-  max-width: 480px;
+  max-width: 440px;
   font-size: 19px;
 }
 .google {
@@ -55,7 +55,7 @@ img {
   text-align: center;
 }
 fa-icon {
-  font-size: 22px;
+  font-size: 30px;
   color: #5cbb54;
 }
 .email-input,
@@ -63,4 +63,7 @@ fa-icon {
   display: flex;
   gap: 5px;
   border-bottom: 2px solid black;
+}
+.password {
+  margin-bottom: 40px;
 }
