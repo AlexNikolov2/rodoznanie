@@ -1,4 +1,13 @@
 .reg-wrap {
   background-image: url(../../../assets/images/map-test.png);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register {
+  background-color: #cdedca;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
 }
