@@ -8,17 +8,18 @@
 .register {
   background-color: #cdedca;
   min-width: 320px;
-  width: 600px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   padding: 17px 25px;
+  border-radius: 60px 0px;
 }
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   min-width: 300px;
-  max-width: 700px;
+  max-width: 500px;
 }
 .inputs {
   display: flex;
@@ -29,12 +30,15 @@ form {
 }
 input {
   min-width: 300px;
-  width: 550px;
+  width: 450px;
   border: none;
   padding: 7px 6px;
 }
 h2 {
   text-align: center;
+  font-size: 36px;
+  margin: 15px;
+  font-weight: bolder;
 }
 .button {
   text-align: right;
@@ -46,4 +50,8 @@ button {
   background-color: #1e6c17;
   color: white;
   border: none;
+  font-size: 22px;
+  padding: 8px 24px;
+
+  margin-top: 7px;
 }
