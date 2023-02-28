@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AddHistoryComponent } from './add-history/add-history.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AddHistoryComponent
+  ],
   imports: [
     CommonModule
   ]
