@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,7 +8,7 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 })
 export class LandingPageComponent {
   icons = {
-    globe: faGlobe,
+    map: faMapLocationDot,
   };
   constructor() {}
 }
