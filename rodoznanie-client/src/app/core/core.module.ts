@@ -6,6 +6,6 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 @NgModule({
   declarations: [HeaderComponent, LandingPageComponent],
   imports: [CommonModule],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent, LandingPageComponent],
 })
 export class CoreModule {}
