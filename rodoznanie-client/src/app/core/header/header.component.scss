@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+
 header {
   display: flex;
   flex-direction: row;
@@ -23,4 +25,54 @@ a {
   text-decoration: none;
   font-size: 20px;
   color: black;
+}
+fa-icon {
+  font-size: 44px;
+  padding: 0 6px;
+}
+#login {
+  border: 3px solid black;
+  border-radius: 14px;
+  padding: 6px 13px;
+}
+#login:hover {
+  border: 5px solid;
+}
+#login > a:hover {
+  font-weight: bold;
+}
+#register,
+#add-history {
+  background-color: rgb(51, 134, 51);
+  border: 3px solid rgb(51, 134, 51);
+  border-radius: 14px;
+  padding: 6px 13px;
+}
+#register > a,
+#add-history > a {
+  color: white;
+  font-weight: bold;
+}
+
+#register:hover,
+#add-history:hover {
+  background-color: white;
+  border: 3px solid white;
+}
+#register > a:hover,
+#add-history > a:hover {
+  color: rgb(51, 134, 51);
+}
+a:hover {
+  font-weight: bold;
+}
+.left {
+  display: flex;
+  align-items: center;
+}
+h2 {
+  font-family: "Neucha", cursive;
+  font-size: 54px;
+  margin: 0;
+  color: #303030;
 }
