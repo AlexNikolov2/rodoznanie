@@ -8,6 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [HeaderComponent, LandingPageComponent, FooterComponent],
   imports: [CommonModule, FontAwesomeModule],
-  exports: [HeaderComponent, LandingPageComponent],
+  exports: [HeaderComponent, LandingPageComponent, FooterComponent],
 })
 export class CoreModule {}
