@@ -52,13 +52,11 @@ button {
   border-radius: 40px;
 }
 
-/* center the blockquote in the page */
 .blockquote-wrapper {
   display: flex;
   padding: 50px 20px;
 }
 
-/* Blockquote main style */
 .blockquote {
   position: relative;
   font-family: "Montserrat", sans-serif;
@@ -74,7 +72,6 @@ button {
   border-bottom: solid 1px;
 }
 
-/* Blockquote header */
 .blockquote h1 {
   position: relative;
   color: #ffffff;
@@ -84,7 +81,6 @@ button {
   margin: 0;
 }
 
-/* Blockquote right double quotes */
 .blockquote:after {
   position: absolute;
   content: "”";
@@ -95,14 +91,12 @@ button {
   right: 30px;
 }
 
-/* increase header size after 600px */
 @media all and (min-width: 600px) {
   .blockquote h1 {
     font-size: 40px;
   }
 }
 
-/* Blockquote subheader */
 .blockquote h4 {
   position: relative;
   color: white;
