@@ -97,6 +97,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "rodoznanie-client:build:production",
+            "firebaseProject": "rodoznanie-30ae4",
+            "firebaseHostingSite": "rodoznanie"
+          }
         }
       }
     }

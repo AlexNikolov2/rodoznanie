@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "rodoznanie-30ae4"
+  },
+  "targets": {
+    "rodoznanie-30ae4": {
+      "hosting": {
+        "rodoznanie-client": [
+          "rodoznanie"
+        ]
+      }
+    }
+  }
+}
