@@ -20,9 +20,17 @@ export class AuthService {
   ) {}
 
   //Register
+  Register(email: string, password: string) {}
   //Login
+  Login(email: string, password: string) {}
   //GoogleAuth
+  GoogleAuth() {}
   //get isLoggedIn
+  get isLoggedIn(): boolean {
+    return true; //test
+  }
   //setUserData
+  SetUserData(user: any) {}
   //logout
+  Logout() {}
 }
