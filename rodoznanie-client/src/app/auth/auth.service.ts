@@ -40,7 +40,7 @@ export class AuthService {
   //GoogleAuth
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['/']);
     });
   }
 
@@ -49,7 +49,7 @@ export class AuthService {
     return this.fireAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['/']);
         this.SetUserData(result.user);
       })
       .catch((error) => {
