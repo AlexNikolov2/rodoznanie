@@ -33,14 +33,17 @@ export class AuthService {
 
   //Register
   Register(email: string, password: string) {}
+
   //Login
   Login(email: string, password: string) {}
+
   //GoogleAuth
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
       this.router.navigate(['dashboard']);
     });
   }
+
   //AuthLogin
   AuthLogin(provider: any) {
     return this.fireAuth
@@ -53,12 +56,15 @@ export class AuthService {
         window.alert(error);
       });
   }
+
   //get isLoggedIn
   get isLoggedIn(): boolean {
     return true; //test
   }
+
   //setUserData
   SetUserData(user: any) {}
+
   //logout
   Logout() {}
 }
