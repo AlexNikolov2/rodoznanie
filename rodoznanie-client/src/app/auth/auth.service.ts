@@ -18,4 +18,11 @@ export class AuthService {
     public router: Router,
     public ngZone: NgZone
   ) {}
+
+  //Register
+  //Login
+  //GoogleAuth
+  //get isLoggedIn
+  //setUserData
+  //logout
 }
