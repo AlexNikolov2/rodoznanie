@@ -33,11 +33,22 @@ export class AuthService {
   }
 
   //Register
-  Register(email: string, password: string) {
+  Register(
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string
+  ) {
     return this.fireAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.SetUserData(result.user);
+        const uid = result.user?.uid;
+        const email = result.user?.email;
+        const userRef: AngularFirestoreDocument<any> = this.firestore.doc(
+          `Users/${result.user!.uid}`
+        );
+        const userData = { uid, firstName, lastName, email };
+        userRef.set(userData);
       })
       .catch((error) => {
         window.alert(error.message);
