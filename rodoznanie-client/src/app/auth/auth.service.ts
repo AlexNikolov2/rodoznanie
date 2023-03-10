@@ -6,6 +6,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import * as auth from 'firebase/auth';
+import { User } from '../shared/interfaces/user';
 
 @Injectable({
   providedIn: 'root',
@@ -32,10 +33,28 @@ export class AuthService {
   }
 
   //Register
-  Register(email: string, password: string) {}
+  Register(email: string, password: string) {
+    return this.fireAuth
+      .createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        this.SetUserData(result.user);
+      })
+      .catch((error) => {
+        window.alert(error.message);
+      });
+  }
 
   //Login
-  Login(email: string, password: string) {}
+  Login(email: string, password: string) {
+    return this.fireAuth
+      .signInWithEmailAndPassword(email, password)
+      .then((result) => {
+        this.SetUserData(result.user);
+      })
+      .catch((error) => {
+        window.alert(error.message);
+      });
+  }
 
   //GoogleAuth
   GoogleAuth() {
@@ -59,12 +78,31 @@ export class AuthService {
 
   //get isLoggedIn
   get isLoggedIn(): boolean {
-    return true; //test
+    const user = JSON.parse(localStorage.getItem('user')!);
+    return user !== null && user.emailVerified !== false ? true : false;
   }
 
   //setUserData
-  SetUserData(user: any) {}
+  SetUserData(user: any) {
+    const userRef: AngularFirestoreDocument<any> = this.firestore.doc(
+      `Users/${user.uid}`
+    );
+    const userData: User = {
+      uid: user.uid,
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+    };
+    return userRef.set(userData, {
+      merge: true,
+    });
+  }
 
   //logout
-  Logout() {}
+  Logout() {
+    return this.fireAuth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.router.navigate(['login']);
+    });
+  }
 }
