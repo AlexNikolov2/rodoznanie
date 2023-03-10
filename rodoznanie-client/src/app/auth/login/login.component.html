@@ -1,7 +1,7 @@
 <section class="login-wrap">
   <section class="login">
     <h2>Login</h2>
-    <form action="">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="email">
         <label for="email"><b>Email</b></label>
         <div class="email-input">

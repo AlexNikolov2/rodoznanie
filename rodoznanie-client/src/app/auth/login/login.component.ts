@@ -13,5 +13,9 @@ export class LoginComponent {
     lock: faLock,
   };
 
+  form: any;
+
   constructor() {}
+
+  onSubmit() {}
 }
