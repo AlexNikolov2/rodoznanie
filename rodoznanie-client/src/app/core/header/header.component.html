@@ -20,6 +20,9 @@
           >Добави история</a
         >
       </li>
+      <li id="login" *ngIf="!authService.isLoggedIn">
+        <a routerLink="/">Излез</a>
+      </li>
     </ul>
   </nav>
 </header>
