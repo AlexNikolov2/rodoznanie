@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faEarthEurope } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,5 +12,5 @@ export class HeaderComponent {
     globe: faEarthEurope,
   };
 
-  constructor() {}
+  constructor(public authService: AuthService) {}
 }
