@@ -15,13 +15,15 @@
       <li id="register" *ngIf="!authService.isLoggedIn">
         <a routerLink="/register">Регистрация</a>
       </li>
-      <li id="add-history">
-        <a routerLink="/add-history" *ngIf="authService.isLoggedIn"
-          >Добави история</a
-        >
+      <li id="add-history" *ngIf="authService.isLoggedIn">
+        <a routerLink="/add-history">Добави история</a>
       </li>
-      <li id="login" *ngIf="!authService.isLoggedIn">
-        <a routerLink="/">Излез</a>
+      <li
+        id="login"
+        *ngIf="authService.isLoggedIn"
+        (click)="authService.Logout()"
+      >
+        <a>Излез</a>
       </li>
     </ul>
   </nav>
