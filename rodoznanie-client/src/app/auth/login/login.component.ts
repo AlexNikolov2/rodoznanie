@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private formbuilder: FormBuilder,
     private router: Router
   ) {}

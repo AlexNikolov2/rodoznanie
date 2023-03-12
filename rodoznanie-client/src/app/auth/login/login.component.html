@@ -29,7 +29,11 @@
       <button type="submit" class="btn btn-primary"><b>LOGIN</b></button>
       <div class="google">
         <p>Or sign up using</p>
-        <img src="../../../assets/images/google.png" alt="" />
+        <img
+          src="../../../assets/images/google.png"
+          alt=""
+          (click)="authService.GoogleAuth()"
+        />
       </div>
       <div class="no-account">
         <p>Not having an account yet?</p>
