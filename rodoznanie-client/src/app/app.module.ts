@@ -20,6 +20,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
     AngularFirestoreModule,
+    GoogleMapsModule,
   ],
   providers: [ScreenTrackingService, UserTrackingService],
   bootstrap: [AppComponent],

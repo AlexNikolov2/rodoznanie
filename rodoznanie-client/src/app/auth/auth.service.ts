@@ -70,7 +70,7 @@ export class AuthService {
   //GoogleAuth
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/map']);
     });
   }
 
@@ -79,7 +79,7 @@ export class AuthService {
     return this.fireAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/map']);
         this.SetUserData(result.user);
       })
       .catch((error) => {
@@ -101,8 +101,6 @@ export class AuthService {
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName,
     };
     return userRef.set(userData, {
       merge: true,
