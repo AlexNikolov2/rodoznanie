@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Firestore } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { Story } from '../shared/interfaces/story';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +10,10 @@ export class HistoryService {
   constructor(private firestore: Firestore) {}
 
   //get all stories
-  getAllStories() {}
+  getAllStories(): Observable<Story[]> {
+    const storyRef = collection(this.firestore, 'History');
+    return collectionData(storyRef, { idField: 'id' }) as Observable<Story[]>;
+  }
   //get story by id
   getStoryById() {}
   //create story
