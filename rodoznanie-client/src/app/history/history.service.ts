@@ -3,8 +3,10 @@ import {
   Firestore,
   collection,
   collectionData,
+  deleteDoc,
   doc,
   docData,
+  setDoc,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Story } from '../shared/interfaces/story';
@@ -46,8 +48,14 @@ export class HistoryService {
     };
   }
   //edit story
-  editStory() {}
+  editStory(story: any, storyId: string) {
+    const storyDocRef = doc(this.firestore, `History/${storyId}`);
+    return setDoc(storyDocRef, story);
+  }
   //delete story
-  deleteStory() {}
+  deleteStory(storyId: string) {
+    const storyDocRef = doc(this.firestore, `History/${storyId}`);
+    return deleteDoc(storyDocRef);
+  }
   //relate to a story*
 }

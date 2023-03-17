@@ -121,6 +121,8 @@ export class AuthService {
     return this.userData.uid;
   }
 
+  //getusernames
+
   getUserNames(): any {
     console.log(`${this.userData.firstName} ${this.userData.lastname}`);
 
