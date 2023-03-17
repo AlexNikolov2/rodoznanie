@@ -8,12 +8,19 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Story } from '../shared/interfaces/story';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HistoryService {
-  constructor(private firestore: Firestore) {}
+  private basepath = '/images';
+  constructor(
+    private firestore: Firestore,
+    private afs: AngularFirestore,
+    public authService: AuthService
+  ) {}
 
   //get all stories
   getAllStories(): Observable<Story[]> {
@@ -26,7 +33,18 @@ export class HistoryService {
     return docData(storyRef, { idField: 'id' }) as Observable<Story[]>;
   }
   //create story
-  createStory() {}
+  createStory(name: string, address: string, history: string, image: string) {
+    const story: Story = {
+      id: '',
+      name: name,
+      address: address,
+      history: history,
+      image: image,
+      relatives: [],
+      userId: this.authService.getUserId(),
+      user: this.authService.getUserNames(),
+    };
+  }
   //edit story
   editStory() {}
   //delete story

@@ -114,4 +114,16 @@ export class AuthService {
       this.router.navigate(['login']);
     });
   }
+
+  //getUserId
+
+  getUserId(): any {
+    return this.userData.uid;
+  }
+
+  getUserNames(): any {
+    console.log(`${this.userData.firstName} ${this.userData.lastname}`);
+
+    return `${this.userData.firstName} ${this.userData.lastname}`;
+  }
 }

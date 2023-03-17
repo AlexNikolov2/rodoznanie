@@ -8,5 +8,5 @@ export interface Story {
   image: string;
   relatives: string[];
   userId: string | null;
-  user: User;
+  user: string;
 }
