@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import {
+  Firestore,
+  collection,
+  collectionData,
+  doc,
+  docData,
+} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Story } from '../shared/interfaces/story';
 
@@ -11,11 +17,14 @@ export class HistoryService {
 
   //get all stories
   getAllStories(): Observable<Story[]> {
-    const storyRef = collection(this.firestore, 'History');
-    return collectionData(storyRef, { idField: 'id' }) as Observable<Story[]>;
+    const storiesRef = collection(this.firestore, 'History');
+    return collectionData(storiesRef, { idField: 'id' }) as Observable<Story[]>;
   }
   //get story by id
-  getStoryById() {}
+  getStoryById(id: string) {
+    const storyRef = doc(this.firestore, `History/${id}`);
+    return docData(storyRef, { idField: 'id' }) as Observable<Story[]>;
+  }
   //create story
   createStory() {}
   //edit story
