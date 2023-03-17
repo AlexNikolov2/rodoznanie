@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import { Story } from '../shared/interfaces/story';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthService } from '../auth/auth.service';
+import { addDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -36,6 +37,7 @@ export class HistoryService {
   }
   //create story
   createStory(name: string, address: string, history: string, image: string) {
+    const storyRef = collection(this.firestore, `History`);
     const story: Story = {
       id: '',
       name: name,
@@ -46,6 +48,8 @@ export class HistoryService {
       userId: this.authService.getUserId(),
       user: this.authService.getUserNames(),
     };
+    story.id = this.afs.createId();
+    return addDoc(storyRef, story);
   }
   //edit story
   editStory(story: any, storyId: string) {
