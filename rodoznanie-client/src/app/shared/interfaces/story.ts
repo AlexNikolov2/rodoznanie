@@ -5,7 +5,7 @@ export interface Story {
   name: string;
   address: string;
   history: string;
-  image: string;
+  image: File | string;
   relatives: string[];
   userId: string | null;
   user: string;
