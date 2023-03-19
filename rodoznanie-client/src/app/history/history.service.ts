@@ -45,24 +45,14 @@ export class HistoryService {
     return docData(storyRef, { idField: 'id' }) as Observable<Story[]>;
   }
   //create story
-  createStory(name: string, address: string, history: string, image: File) {
-    const imageRef = ref(this.storage, `images/${image}`);
-    uploadBytesResumable(imageRef, image).then((snapshot) => {
-      console.log(snapshot.ref);
-      getDownloadURL(snapshot.ref).then((downloadURL) => {
-        console.log('Download URl: ' + downloadURL);
-
-        this.newImage = downloadURL;
-      });
-    });
-
+  createStory(name: string, address: string, history: string, image: string) {
     const storyRef = collection(this.firestore, `History`);
     const story: Story = {
       id: '',
       name: name,
       address: address,
       history: history,
-      image: this.newImage,
+      image: image,
       relatives: [],
       userId: this.authService.getUserId(),
       user: this.authService.getUserNames(),
