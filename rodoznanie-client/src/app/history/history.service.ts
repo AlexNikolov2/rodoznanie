@@ -18,6 +18,7 @@ import {
   getStorage,
   ref,
   uploadBytes,
+  uploadBytesResumable,
 } from '@angular/fire/storage';
 
 @Injectable({
@@ -45,9 +46,12 @@ export class HistoryService {
   }
   //create story
   createStory(name: string, address: string, history: string, image: File) {
-    const imageRef = ref(this.storage, 'images');
-    uploadBytes(imageRef, image).then((snapshot) => {
+    const imageRef = ref(this.storage, `images/${image}`);
+    uploadBytesResumable(imageRef, image).then((snapshot) => {
+      console.log(snapshot.ref);
       getDownloadURL(snapshot.ref).then((downloadURL) => {
+        console.log('Download URl: ' + downloadURL);
+
         this.newImage = downloadURL;
       });
     });
