@@ -22,7 +22,7 @@ export class AddHistoryComponent implements OnInit {
     this.createForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       address: ['', [Validators.required]],
-      description: ['', [Validators.required, Validators.minLength(10)]],
+      history: ['', [Validators.required, Validators.minLength(10)]],
       image: ['', Validators.required],
     });
   }
@@ -33,9 +33,9 @@ export class AddHistoryComponent implements OnInit {
       return;
     }
     this.historyService.createStory(
-      this.createForm.controls['title'].value,
+      this.createForm.controls['name'].value,
       this.createForm.controls['address'].value,
-      this.createForm.controls['description'].value,
+      this.createForm.controls['history'].value,
       this.createForm.controls['image'].value
     );
     this.createForm.reset();
