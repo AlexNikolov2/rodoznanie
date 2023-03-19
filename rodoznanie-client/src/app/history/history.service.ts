@@ -45,7 +45,7 @@ export class HistoryService {
   }
   //create story
   createStory(name: string, address: string, history: string, image: File) {
-    const imageRef = ref(this.storage);
+    const imageRef = ref(this.storage, 'images');
     uploadBytes(imageRef, image).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((downloadURL) => {
         this.newImage = downloadURL;
