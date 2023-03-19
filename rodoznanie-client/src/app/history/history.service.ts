@@ -13,17 +13,25 @@ import { Story } from '../shared/interfaces/story';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthService } from '../auth/auth.service';
 import { addDoc } from 'firebase/firestore';
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytes,
+} from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HistoryService {
-  private basepath = '/images';
   constructor(
     private firestore: Firestore,
     private afs: AngularFirestore,
     public authService: AuthService
   ) {}
+
+  newImage = '';
+  storage = getStorage();
 
   //get all stories
   getAllStories(): Observable<Story[]> {
@@ -36,18 +44,26 @@ export class HistoryService {
     return docData(storyRef, { idField: 'id' }) as Observable<Story[]>;
   }
   //create story
-  createStory(name: string, address: string, history: string, image: string) {
+  createStory(name: string, address: string, history: string, image: File) {
+    const imageRef = ref(this.storage);
+    uploadBytes(imageRef, image).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((downloadURL) => {
+        this.newImage = downloadURL;
+      });
+    });
+
     const storyRef = collection(this.firestore, `History`);
     const story: Story = {
       id: '',
       name: name,
       address: address,
       history: history,
-      image: image,
+      image: this.newImage,
       relatives: [],
       userId: this.authService.getUserId(),
       user: this.authService.getUserNames(),
     };
+
     story.id = this.afs.createId();
     return addDoc(storyRef, story);
   }
