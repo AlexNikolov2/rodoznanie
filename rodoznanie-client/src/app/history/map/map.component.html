@@ -1,3 +1,6 @@
 <google-map height="85vh" width="100vw" [center]="center" [zoom]="7">
-  <map-marker [position]="markerPositions"></map-marker>
+  <map-marker
+    *ngFor="let markerPosition of markerPositions"
+    [position]="markerPosition"
+  ></map-marker>
 </google-map>

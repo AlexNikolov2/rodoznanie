@@ -10,7 +10,7 @@ import { HistoryService } from '../history.service';
 })
 export class MapComponent implements OnInit {
   center: google.maps.LatLngLiteral = { lat: 42, lng: 24 };
-  markerPositions: google.maps.LatLngLiteral = { lat: 42, lng: 24 };
+  markerPositions: google.maps.LatLngLiteral[] = [];
   stories: any;
 
   constructor(
@@ -36,7 +36,11 @@ export class MapComponent implements OnInit {
             address: s.address,
           })
           .subscribe(({ results }) => {
-            console.log(results);
+            results.forEach((result) => {
+              let lat = result.geometry.location.lat();
+              let lng = result.geometry.location.lng();
+              this.markerPositions.push({ lat, lng });
+            });
           });
       });
     });
