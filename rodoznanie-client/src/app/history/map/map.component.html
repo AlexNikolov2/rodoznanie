@@ -2,5 +2,9 @@
   <map-marker
     *ngFor="let markerPosition of markerPositions"
     [position]="markerPosition"
-  ></map-marker>
+    (mapClick)="openInfoWindow(marker)"
+    #marker="mapMarker"
+  >
+  </map-marker>
+  <map-info-window *ngFor="let s of stories">{{ s.name }}</map-info-window>
 </google-map>
