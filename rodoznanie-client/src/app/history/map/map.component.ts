@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent {
+  center: google.maps.LatLngLiteral = { lat: 24, lng: 12 };
+  markerPositions: google.maps.LatLngLiteral = { lat: 24, lng: 12 };
   constructor() {}
 }
