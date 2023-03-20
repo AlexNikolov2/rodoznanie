@@ -6,5 +6,5 @@
     #marker="mapMarker"
   >
   </map-marker>
-  <map-info-window><p>Info window</p></map-info-window>
+  <map-info-window *ngFor="let s of stories">{{ s.name }}</map-info-window>
 </google-map>

@@ -32,7 +32,8 @@ export class MapComponent implements OnInit {
   }
 
   geocodeAddress() {
-    this.stories.forEach((story: any) => {
+    let storiesForData = this.historyServices.getAllStories();
+    storiesForData.forEach((story: any) => {
       story.forEach((s: any) => {
         this.geocoder
           .geocode({
