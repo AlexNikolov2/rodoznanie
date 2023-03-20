@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MapGeocoder } from '@angular/google-maps';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MapGeocoder, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { Router } from '@angular/router';
 import { HistoryService } from '../history.service';
 

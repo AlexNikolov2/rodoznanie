@@ -2,5 +2,7 @@
   <map-marker
     *ngFor="let markerPosition of markerPositions"
     [position]="markerPosition"
+    (mapClick)="redirectToDetails()"
   ></map-marker>
+  <map-info-window>Info Window content</map-info-window>
 </google-map>
