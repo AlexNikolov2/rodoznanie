@@ -9,6 +9,9 @@ import { HistoryService } from '../history.service';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
+  @ViewChild(MapInfoWindow)
+  infoWindow!: MapInfoWindow;
+
   center: google.maps.LatLngLiteral = { lat: 42, lng: 24 };
   markerPositions: google.maps.LatLngLiteral[] = [];
   stories: any;
@@ -48,5 +51,9 @@ export class MapComponent implements OnInit {
 
   redirectToDetails() {
     this.router.navigate(['/history-details']);
+  }
+
+  openInfoWindow(marker: MapMarker) {
+    this.infoWindow.open(marker);
   }
 }
