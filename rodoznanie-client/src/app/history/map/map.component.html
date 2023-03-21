@@ -1,10 +1,14 @@
 <google-map height="85vh" width="100vw" [center]="center" [zoom]="7">
-  <map-marker
-    *ngFor="let markerPosition of markerPositions"
-    [position]="markerPosition"
-    (mapClick)="openInfoWindow(marker)"
-    #marker="mapMarker"
-  >
-  </map-marker>
-  <map-info-window *ngFor="let s of stories">{{ s.name }}</map-info-window>
+  <div *ngFor="let story of stories | async">
+    <map-marker
+      *ngFor="let markerPosition of markerPositions"
+      [position]="markerPosition"
+      (mapClick)="openInfoWindow(marker)"
+      #marker="mapMarker"
+    >
+    </map-marker>
+    <map-info-window>
+      <a routerLink="/history-details/{{ story.id }}">{{ story.history }}</a>
+    </map-info-window>
+  </div>
 </google-map>

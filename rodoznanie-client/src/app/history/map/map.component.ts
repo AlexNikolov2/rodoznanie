@@ -17,7 +17,6 @@ export class MapComponent implements OnInit {
   stories: any;
 
   constructor(
-    private router: Router,
     private geocoder: MapGeocoder,
     private historyServices: HistoryService
   ) {}
@@ -48,10 +47,6 @@ export class MapComponent implements OnInit {
           });
       });
     });
-  }
-
-  redirectToDetails() {
-    this.router.navigate(['/history-details']);
   }
 
   openInfoWindow(marker: MapMarker) {

@@ -13,13 +13,6 @@ import { Story } from '../shared/interfaces/story';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthService } from '../auth/auth.service';
 import { addDoc } from 'firebase/firestore';
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytes,
-  uploadBytesResumable,
-} from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root',
@@ -30,9 +23,6 @@ export class HistoryService {
     private afs: AngularFirestore,
     public authService: AuthService
   ) {}
-
-  newImage = '';
-  storage = getStorage();
 
   //get all stories
   getAllStories(): Observable<Story[]> {
