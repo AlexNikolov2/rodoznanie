@@ -17,7 +17,7 @@ export class MapComponent implements OnInit {
   stories: any;
   storiesArray: any[] = [];
 
-  baba = {} as any;
+  storyData = {} as any;
 
   constructor(
     private geocoder: MapGeocoder,
@@ -58,8 +58,8 @@ export class MapComponent implements OnInit {
     });
   }
 
-  openInfoWindow(marker: MapMarker, baba: any) {
-    this.baba = baba;
+  openInfoWindow(marker: MapMarker, storyData: any) {
+    this.storyData = storyData;
     this.infoWindow.open(marker);
   }
 }
