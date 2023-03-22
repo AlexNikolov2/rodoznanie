@@ -1,14 +1,15 @@
-<google-map height="85vh" width="100vw" [center]="center" [zoom]="7">
-  <div *ngFor="let story of stories | async">
-    <map-marker
-      *ngFor="let markerPosition of markerPositions"
-      [position]="markerPosition"
-      (mapClick)="openInfoWindow(marker)"
-      #marker="mapMarker"
-    >
-    </map-marker>
+<google-map height="85vh" width="100%" [center]="center" [zoom]="7">
+  <map-marker
+    *ngFor="let story of storiesArray"
+    [position]="story.address"
+    (mapClick)="openInfoWindow(marker, story)"
+    #marker="mapMarker"
+  >
     <map-info-window>
-      <a routerLink="/history-details/{{ story.id }}">{{ story.history }}</a>
+      <h2>{{ storyData.name }}</h2>
+      <p>{{ storyData.history }}</p>
+      <a routerLink="/history-details/{{ storyData.id }}">Научи повече</a>
+      <img src="{{ storyData.image }}" alt="" />
     </map-info-window>
-  </div>
+  </map-marker>
 </google-map>
