@@ -11,7 +11,7 @@ import { HistoryService } from '../history.service';
 })
 export class HistoryDetailsComponent {
   story: any;
-  postId!: any;
+  storyId!: any;
   currUser?: string | null;
 
   constructor(
@@ -21,4 +21,22 @@ export class HistoryDetailsComponent {
     public auth: AngularFireAuth,
     public authService: AuthService
   ) {}
+
+  ngOnInit() {
+    this.storyId = this.route.snapshot.params['id'];
+    this.historyService.getStoryById(this.storyId).subscribe((post: any) => {
+      this.story = post;
+    });
+    this.auth.authState.subscribe((user) => {
+      this.currUser = user!.uid;
+    });
+
+    this.auth.user.subscribe((user) => (this.currUser = user?.email));
+  }
+
+  deletePost() {
+    alert('Are you sure you want to delete this post?');
+    this.historyService.deleteStory(this.storyId);
+    this.router.navigate(['/all-posts']);
+  }
 }
