@@ -39,6 +39,6 @@ export class AddHistoryComponent implements OnInit {
       this.createForm.controls['image'].value
     );
     this.createForm.reset();
-    this.router.navigate(['/']);
+    this.router.navigate(['/map']);
   }
 }

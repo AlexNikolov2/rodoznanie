@@ -37,6 +37,6 @@ export class HistoryDetailsComponent {
   deletePost() {
     alert('Are you sure you want to delete this post?');
     this.historyService.deleteStory(this.storyId);
-    this.router.navigate(['/all-posts']);
+    this.router.navigate(['/map']);
   }
 }
