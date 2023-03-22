@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './not-found/not-found.component';
-
-
+import { ShortenPipe } from './pipes/shorten.pipe';
 
 @NgModule({
-  declarations: [
-    NotFoundComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [NotFoundComponent, ShortenPipe],
+  imports: [CommonModule],
 })
-export class SharedModule { }
+export class SharedModule {}
