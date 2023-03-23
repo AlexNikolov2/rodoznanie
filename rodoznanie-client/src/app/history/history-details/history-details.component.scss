@@ -1,0 +1,80 @@
+img {
+  max-width: 600px;
+  border: 3px solid rgb(83, 33, 0);
+  border-radius: 20px;
+  object-fit: contain;
+  height: auto;
+}
+.history-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 600px;
+}
+button {
+  padding: 5 9px;
+  margin: 11px;
+  font-size: 26px;
+
+  border-radius: 30px;
+}
+#edit {
+  background-color: #cdedca;
+  padding: 5px 9px;
+  margin: 11px;
+  border: 3px solid #a3cc9f;
+}
+#delete {
+  background-color: red;
+  border: 3px solid rgb(175, 0, 0);
+  color: white;
+  padding: 5px 9px;
+  margin: 11px;
+}
+button:hover {
+  font-weight: bolder;
+  cursor: pointer;
+}
+a:hover {
+  font-weight: bolder;
+}
+a {
+  background-color: #cdedca;
+  font-weight: 500;
+  padding: 8px 17px;
+  font-size: 23px;
+  border-radius: 15px;
+}
+fa-icon {
+  margin: 6px;
+}
+.location {
+  background-color: rgb(78, 41, 20);
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: max-content;
+  padding: 8px 17px;
+  font-size: 23px;
+  border-radius: 15px;
+}
+.location p {
+  font-weight: 500;
+  margin: 0;
+}
+.info {
+  margin-bottom: 25px;
+}
+h2 {
+  font-size: 38px;
+}
+
+@media screen and (max-width: 768px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}

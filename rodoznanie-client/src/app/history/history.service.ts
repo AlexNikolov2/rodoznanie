@@ -7,6 +7,7 @@ import {
   doc,
   docData,
   setDoc,
+  updateDoc,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Story } from '../shared/interfaces/story';
@@ -54,7 +55,7 @@ export class HistoryService {
   //edit story
   editStory(story: any, storyId: string) {
     const storyDocRef = doc(this.firestore, `History/${storyId}`);
-    return setDoc(storyDocRef, story);
+    return updateDoc(storyDocRef, story);
   }
   //delete story
   deleteStory(storyId: string) {
