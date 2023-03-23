@@ -37,6 +37,41 @@ button:hover {
   font-weight: bolder;
   cursor: pointer;
 }
+a:hover {
+  font-weight: bolder;
+}
+a {
+  background-color: #cdedca;
+  font-weight: 500;
+  padding: 8px 17px;
+  font-size: 23px;
+  border-radius: 15px;
+}
+fa-icon {
+  margin: 6px;
+}
+.location {
+  background-color: rgb(78, 41, 20);
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: max-content;
+  padding: 8px 17px;
+  font-size: 23px;
+  border-radius: 15px;
+}
+.location p {
+  font-weight: 500;
+  margin: 0;
+}
+.info {
+  margin-bottom: 25px;
+}
+h2 {
+  font-size: 38px;
+}
+
 @media screen and (max-width: 768px) {
   .buttons {
     display: flex;

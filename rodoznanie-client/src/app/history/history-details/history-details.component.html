@@ -2,10 +2,12 @@
   <article class="story">
     <section class="info">
       <h2>{{ story.name }}</h2>
-      <a href="mailto:{{ story.user }}">{{ story.user }}</a>
+      <a href="mailto:{{ story.user }}"
+        ><fa-icon [icon]="icons.mail"></fa-icon>{{ story.user }}</a
+      >
     </section>
     <section class="location">
-      <p>{{ story.address }}</p>
+      <p><fa-icon [icon]="icons.location"></fa-icon>{{ story.address }}</p>
     </section>
     <section class="story">
       <p>
