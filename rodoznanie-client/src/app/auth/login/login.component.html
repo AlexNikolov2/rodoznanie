@@ -1,4 +1,16 @@
 <section class="login-wrap">
+  <div *ngIf="submitted && form.invalid" class="error">
+    <p *ngIf="form.get('email')!.errors?.['required']">
+      Имейлът в задължителен!
+    </p>
+    <p *ngIf="form.get('email')!.errors?.['email']">Имейлът е невалиден!</p>
+    <p *ngIf="form.get('password')!.errors?.['required']">
+      Паролата е необходима!
+    </p>
+    <p *ngIf="form.get('password')!.errors?.['minlength']">
+      Паролата трябва да бъде с поне 6 знака!
+    </p>
+  </div>
   <section class="login">
     <h2>Влез</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">

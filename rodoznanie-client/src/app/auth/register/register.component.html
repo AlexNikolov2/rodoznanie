@@ -23,24 +23,24 @@
   </div>
 
   <section class="register">
-    <h2>Register here</h2>
+    <h2>Регистрирай се!</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="inputs">
         <input
           formControlName="firstName"
           type="text"
-          placeholder="First Name"
+          placeholder="Лично име"
         />
-        <input formControlName="lastName" type="text" placeholder="Last name" />
-        <input formControlName="email" type="email" placeholder="Email" />
+        <input formControlName="lastName" type="text" placeholder="Фамилия" />
+        <input formControlName="email" type="email" placeholder="Имейл" />
         <input
           formControlName="password"
           type="password"
-          placeholder="Password"
+          placeholder="Парола"
         />
       </div>
       <div class="button">
-        <button type="submit" class="btn btn-primary">Sign up!</button>
+        <button type="submit" class="btn btn-primary">Потвърди</button>
       </div>
     </form>
   </section>
