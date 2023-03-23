@@ -42,12 +42,12 @@ export class HistoryDetailsComponent {
   }
 
   deleteStory() {
-    alert('Are you sure you want to delete this post?');
+    alert('Сигурен ли сте, че искате да изтриете тази история?');
     this.historyService.deleteStory(this.storyId);
     this.router.navigate(['/map']);
   }
 
   navigateToEditStory() {
-    this.router.navigate([`/edit/${this.story}`]);
+    this.router.navigate([`/edit/${this.storyId}`]);
   }
 }

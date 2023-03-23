@@ -19,7 +19,7 @@
     </section>
   </article>
   <section class="buttons" *ngIf="currUser && story.user == currUser">
-    <button id="edit">Редактирай</button>
-    <button id="delete">Изтрий</button>
+    <button id="edit" (click)="navigateToEditStory()">Редактирай</button>
+    <button id="delete" (click)="deleteStory()">Изтрий</button>
   </section>
 </section>
