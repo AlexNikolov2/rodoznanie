@@ -1,4 +1,27 @@
 <article class="reg-wrap">
+  <div *ngIf="submitted && form.invalid" class="error">
+    <p *ngIf="form.get('email')!.errors?.['required']">Email is required!</p>
+    <p *ngIf="form.get('email')!.errors?.['email']">Email is invalid!</p>
+    <p *ngIf="form.get('password')!.errors?.['required']">
+      Password is required!
+    </p>
+    <p *ngIf="form.get('password')!.errors?.['minlength']">
+      Password must be at least 6 characters!
+    </p>
+    <p *ngIf="form.get('firstName')!.errors?.['required']">
+      First name is required!
+    </p>
+    <p *ngIf="form.get('firstName')!.errors?.['minlength']">
+      First name must be atleast 2 characters!
+    </p>
+    <p *ngIf="form.get('lastName')!.errors?.['required']">
+      Last name name is required!
+    </p>
+    <p *ngIf="form.get('lastName')!.errors?.['minlength']">
+      Last name name must be atleast 2 characters!
+    </p>
+  </div>
+
   <section class="register">
     <h2>Register here</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
