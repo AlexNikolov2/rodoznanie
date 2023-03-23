@@ -32,3 +32,27 @@ h2 {
   margin: 0px 0px 10px 0px;
   font-size: 36px;
 }
+button {
+  background-color: #cdedca;
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+  margin: 20px 0px 5px 0px;
+  padding: 4px 7px;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  flex-wrap: wrap;
+  background-color: rgb(250, 103, 103);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  border: 3px solid red;
+  width: max-content;
+}
+button:hover {
+  cursor: pointer;
+}

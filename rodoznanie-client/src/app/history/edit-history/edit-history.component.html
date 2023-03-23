@@ -1,4 +1,27 @@
 <article class="add-history">
+  <div *ngIf="submitted && editForm.invalid" class="error">
+    <p *ngIf="editForm.get('name')!.errors?.['required']">
+      Името е задължително!
+    </p>
+    <p *ngIf="editForm.get('name')!.errors?.['minlength']">
+      Името на рода/личността трябва да бъде поне 3 букви!
+    </p>
+    <p *ngIf="editForm.get('address')!.errors?.['required']">
+      Адресът е задължителен!
+    </p>
+    <p *ngIf="editForm.get('image')!.errors?.['required']">
+      Изображението е задължително!
+    </p>
+    <p *ngIf="editForm.get('image')!.errors?.['pattern']">
+      Изображението е невалидно!
+    </p>
+    <p *ngIf="editForm.get('history')!.errors?.['required']">
+      Историята е необходима!
+    </p>
+    <p *ngIf="editForm.get('history')!.errors?.['minlength']">
+      Историята трябва да бъде поне 10 букви!
+    </p>
+  </div>
   <section class="form">
     <h2>Редактирай история</h2>
     <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
