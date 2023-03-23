@@ -23,7 +23,7 @@ export class HistoryDetailsComponent {
   ) {}
 
   ngOnInit() {
-    this.authService.getUserNames();
+    this.authService.getUserEmail();
     this.storyId = this.route.snapshot.params['id'];
     this.historyService.getStoryById(this.storyId).subscribe((post: any) => {
       this.story = post;
