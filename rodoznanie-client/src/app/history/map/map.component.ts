@@ -46,7 +46,6 @@ export class MapComponent implements OnInit {
             });
           });
         this.storiesArray.push(s);
-        console.log('S object: ' + JSON.stringify(s));
       });
     });
   }

@@ -25,8 +25,8 @@ export class HistoryDetailsComponent {
   ngOnInit() {
     this.authService.getUserEmail();
     this.storyId = this.route.snapshot.params['id'];
-    this.historyService.getStoryById(this.storyId).subscribe((post: any) => {
-      this.story = post;
+    this.historyService.getStoryById(this.storyId).subscribe((story: any) => {
+      this.story = story;
     });
     this.auth.authState.subscribe((user) => {
       this.currUser = user!.uid;

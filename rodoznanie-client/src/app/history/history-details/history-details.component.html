@@ -16,7 +16,7 @@
       <img src="{{ story.image }}" alt="" />
     </section>
   </article>
-  <section class="buttons">
+  <section class="buttons" *ngIf="currUser && story.user == currUser">
     <button id="edit">Редактирай</button>
     <button id="delete">Изтрий</button>
   </section>
