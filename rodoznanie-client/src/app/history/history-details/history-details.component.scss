@@ -1,8 +1,40 @@
 img {
   max-width: 600px;
+  min-width: 275px;
+  border: 3px solid rgb(83, 33, 0);
+  border-radius: 20px;
+  object-fit: contain;
 }
 .history-details {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  margin: auto;
+  max-width: 600px;
+  min-width: 275px;
+}
+button {
+  padding: 5 9px;
+  margin: 11px;
+  font-size: 26px;
+
+  border-radius: 30px;
+}
+#edit {
+  background-color: #cdedca;
+  padding: 5px 9px;
+  margin: 11px;
+  border: 3px solid #a3cc9f;
+}
+#delete {
+  background-color: red;
+  border: 3px solid rgb(175, 0, 0);
+  color: white;
+  padding: 5px 9px;
+  margin: 11px;
+}
+button:hover {
+  font-weight: bolder;
+  cursor: pointer;
 }
