@@ -1,0 +1,24 @@
+img {
+  width: 275px;
+  object-fit: fill;
+}
+a {
+  background-color: #cdedca;
+  color: black;
+  font-weight: 700;
+  padding: 4px 7px;
+}
+a:hover {
+  font-weight: 900;
+}
+map-info-window {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 275px;
+}
+h2 {
+  margin: 0;
+}

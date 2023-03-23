@@ -1,22 +1,14 @@
-<article class="add-history">
+<article class="edit-history">
   <section class="form">
     <h2>Добави история</h2>
-    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+    <form action="">
       <div class="input">
         <label for="title">Име на род/личност</label>
-        <input
-          type="text"
-          placeholder="Добави име на род/личност"
-          formControlName="name"
-        />
+        <input type="text" placeholder="Добави име на род/личност" />
       </div>
       <div class="input">
         <label for="location">Местоположение</label>
-        <input
-          type="text"
-          placeholder="Добави адрес"
-          formControlName="address"
-        />
+        <input type="text" placeholder="Добави адрес" />
       </div>
       <div class="input">
         <label for="history">История</label>
@@ -25,19 +17,17 @@
           cols="30"
           rows="10"
           placeholder="Разкажи историята"
-          formControlName="history"
         ></textarea>
       </div>
       <div class="input">
         <label for="title">Изображение</label>
         <input
-          type="text"
+          type="file"
           id="avatar"
+          accept="image/png, image/jpeg"
           placeholder="Добави снимка"
-          formControlName="image"
         />
       </div>
-      <button>Добави история</button>
     </form>
   </section>
 </article>
