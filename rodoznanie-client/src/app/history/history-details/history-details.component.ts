@@ -41,9 +41,13 @@ export class HistoryDetailsComponent {
     this.auth.user.subscribe((user) => (this.currUser = user?.email));
   }
 
-  deletePost() {
+  deleteStory() {
     alert('Are you sure you want to delete this post?');
     this.historyService.deleteStory(this.storyId);
     this.router.navigate(['/map']);
+  }
+
+  navigateToEditStory() {
+    this.router.navigate([`/edit/${this.story}`]);
   }
 }

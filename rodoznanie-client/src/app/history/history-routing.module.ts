@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'map', component: MapComponent },
   { path: 'add-history', component: AddHistoryComponent },
   { path: 'history-details/:id', component: HistoryDetailsComponent },
+  { path: 'edit/:id', component: HistoryDetailsComponent },
 ];
 
 @NgModule({
