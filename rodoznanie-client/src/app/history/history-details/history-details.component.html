@@ -1,1 +1,17 @@
-<section class="history-details"></section>
+<section class="history-details">
+  <section class="info">
+    <h2>{{ story.name }}</h2>
+    <a href="mailto:{{ story.user }}">{{ story.user }}</a>
+  </section>
+  <section class="location">
+    <p>{{ story.address }}</p>
+  </section>
+  <section class="story">
+    <p>
+      {{ story.history }}
+    </p>
+  </section>
+  <section class="image">
+    <img src="{{ story.image }}" alt="" />
+  </section>
+</section>
