@@ -30,7 +30,7 @@ form {
   gap: 12px;
 }
 input {
-  min-width: 300px;
+  min-width: 250px;
   width: 450px;
   border: none;
   padding: 7px 6px;
@@ -55,4 +55,13 @@ button {
   padding: 8px 24px;
   border-radius: 60px;
   margin-top: 7px;
+}
+
+@media screen and (max-width: 768px) {
+  .register {
+    max-width: 330px;
+  }
+  input {
+    max-width: 300px;
+  }
 }
