@@ -1,16 +1,16 @@
 <section class="login-wrap">
   <section class="login">
-    <h2>Login</h2>
+    <h2>Влез</h2>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="email">
-        <label for="email"><b>Email</b></label>
+        <label for="email"><b>Имейл</b></label>
         <div class="email-input">
           <fa-icon [icon]="icons.email"></fa-icon>
           <input
             formControlName="email"
             class="form-control"
             type="email"
-            placeholder="Type your email"
+            placeholder="Въведи твоя имейл"
           />
         </div>
       </div>
@@ -22,7 +22,7 @@
             formControlName="password"
             class="form-control"
             type="password"
-            placeholder="Type your password"
+            placeholder="Въведи парола"
           />
         </div>
       </div>
