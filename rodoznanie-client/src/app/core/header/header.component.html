@@ -1,9 +1,19 @@
-<header>
+<header id="header">
   <div class="left">
     <img src="../../../assets/images/logo.png" alt="" />
     <h2>Родознание</h2>
+    <button
+      class="hamburger laptopish_max:hidden float-right mr-0 ml-[15px]"
+      type="button"
+      [@rotatedState]="state"
+      (click)="toggleHamburger()"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
   </div>
-  <nav>
+  <nav id="navbar">
     <ul>
       <li><a routerLink="/">Начало</a></li>
       <li>
