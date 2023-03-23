@@ -1,5 +1,5 @@
 img {
-  width: 220px;
+  width: 275px;
   object-fit: fill;
 }
 a {
@@ -17,6 +17,7 @@ map-info-window {
   gap: 5px;
   justify-content: flex-start;
   align-items: flex-start;
+  max-width: 275px;
 }
 h2 {
   margin: 0;

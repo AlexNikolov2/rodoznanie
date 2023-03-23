@@ -45,7 +45,7 @@ export class HistoryService {
       image: image,
       relatives: [],
       userId: this.authService.getUserId(),
-      user: this.authService.getUserNames(),
+      user: this.authService.getUserEmail(),
     };
 
     story.id = this.afs.createId();
