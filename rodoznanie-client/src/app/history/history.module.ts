@@ -7,6 +7,7 @@ import { HistoryRoutingModule } from './history-routing.module';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { EditHistoryComponent } from './edit-history/edit-history.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GoogleMapsModule,
     FormsModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   exports: [AddHistoryComponent],
 })

@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { HistoryService } from '../history.service';
+import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-history-details',
@@ -13,6 +14,11 @@ export class HistoryDetailsComponent {
   story: any;
   storyId!: any;
   currUser?: string | null;
+
+  icons = {
+    mail: faEnvelope,
+    location: faLocationDot,
+  };
 
   constructor(
     public historyService: HistoryService,
