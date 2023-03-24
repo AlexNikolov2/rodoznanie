@@ -1,14 +1,45 @@
-<article class="edit-history">
+<article class="add-history">
+  <div *ngIf="submitted && editForm.invalid" class="error">
+    <p *ngIf="editForm.get('name')!.errors?.['required']">
+      Името е задължително!
+    </p>
+    <p *ngIf="editForm.get('name')!.errors?.['minlength']">
+      Името на рода/личността трябва да бъде поне 3 букви!
+    </p>
+    <p *ngIf="editForm.get('address')!.errors?.['required']">
+      Адресът е задължителен!
+    </p>
+    <p *ngIf="editForm.get('image')!.errors?.['required']">
+      Изображението е задължително!
+    </p>
+    <p *ngIf="editForm.get('image')!.errors?.['pattern']">
+      Изображението е невалидно!
+    </p>
+    <p *ngIf="editForm.get('history')!.errors?.['required']">
+      Историята е необходима!
+    </p>
+    <p *ngIf="editForm.get('history')!.errors?.['minlength']">
+      Историята трябва да бъде поне 10 букви!
+    </p>
+  </div>
   <section class="form">
-    <h2>Добави история</h2>
-    <form action="">
+    <h2>Редактирай история</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
       <div class="input">
         <label for="title">Име на род/личност</label>
-        <input type="text" placeholder="Добави име на род/личност" />
+        <input
+          type="text"
+          placeholder="Добави име на род/личност"
+          formControlName="name"
+        />
       </div>
       <div class="input">
         <label for="location">Местоположение</label>
-        <input type="text" placeholder="Добави адрес" />
+        <input
+          type="text"
+          placeholder="Добави адрес"
+          formControlName="address"
+        />
       </div>
       <div class="input">
         <label for="history">История</label>
@@ -17,17 +48,20 @@
           cols="30"
           rows="10"
           placeholder="Разкажи историята"
+          formControlName="history"
         ></textarea>
       </div>
       <div class="input">
         <label for="title">Изображение</label>
         <input
-          type="file"
+          type="text"
           id="avatar"
-          accept="image/png, image/jpeg"
           placeholder="Добави снимка"
+          formControlName="image"
+          pattern="^https*:\/\/.*"
         />
       </div>
+      <button>Редактирай история</button>
     </form>
   </section>
 </article>
