@@ -6,5 +6,6 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 @NgModule({
   declarations: [NotFoundComponent, ShortenPipe],
   imports: [CommonModule],
+  exports: [ShortenPipe],
 })
 export class SharedModule {}
