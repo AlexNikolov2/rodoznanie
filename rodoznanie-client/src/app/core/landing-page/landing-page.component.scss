@@ -50,6 +50,7 @@ button {
   text-align: center;
   font-weight: 700;
   border-radius: 40px;
+  transition: font-size 0.5s;
 }
 
 .blockquote-wrapper {
@@ -111,6 +112,7 @@ button {
 }
 button:hover {
   cursor: pointer;
+  font-size: 34px;
 }
 
 @media screen and (max-width: 768px) {

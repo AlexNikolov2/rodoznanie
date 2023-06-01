@@ -47,11 +47,13 @@ fa-icon {
   border: 3px solid rgb(51, 134, 51);
   border-radius: 14px;
   padding: 6px 13px;
+  transition: background-color 0.4s, border 0.4s;
 }
 #register > a,
 #add-history > a {
   color: white;
   font-weight: bold;
+  transition: color 0.4s, font-weight 0.4s;
 }
 
 #register:hover,
