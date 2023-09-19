@@ -6,8 +6,6 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-}
-.landing-page {
   background-image: url(../../../assets/images/Albert-Kahn-Bulgaria-3-fix.jpg);
   background-size: cover;
 }
@@ -71,15 +69,14 @@ button {
   align-self: center;
   border-top: solid 1px;
   border-bottom: solid 1px;
-}
-
-.blockquote h1 {
-  position: relative;
-  color: #ffffff;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1;
-  margin: 0;
+  h1 {
+    position: relative;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+  }
 }
 
 .blockquote:after {
